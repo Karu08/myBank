@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home</title>
+
+<style>
+* {
+	box-sizing : border-box;
+}
+
+header{
+ background-color : #666;
+ padding : 5px;
+ text-align : center;
+ font-size : 35px;
+ color : white;
+ height : 200px;
+}
+
+nav{
+ float : left;
+ width : 30%;
+ height : 300px;
+ background : #ccc;
+ font-size : 20px;
+ padding : 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article{
+ float : left;
+ padding : 20px;
+ width : 70%;
+ background-color : #f1f1f1;
+ height : 300px;
+}
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+footer{
+ background-color : #777;
+ padding : 10px;
+ text-align : center;
+ color : white;
+}
+
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<header>
+ <h2><img src="logo1.jpg" width="100" height="100" style="vertical-align:middle">                   Welcome to myBank!</h2>
+</header>
+
+<section>
+<nav>
+ <ul>
+  <li><a href="#">Home</a></li><br>
+  <li><a href="ViewCust.html">View all customers</a></li><br>
+  <li><a href="SendMoney.html">Send money</a></li><br>
+ </ul>
+</nav>
+
+<article>
+ <h3>myBank makes Banking fun and easy! With myBank web application, you can view all customers, view details of a selected customer and transfer money to a customer of your choice.</h3>
+
+<table style="border-spacing: 5px">
+<tr>
+<td style="padding-right:50px" ><a href="ViewCust.html"><img src="customers-icon-12.png" width="170" height="170" style="border: 5px solid #555"></td>
+<td><a href="SendMoney.html"> <img src="trf-bk.jpg" width="200" height="170" style="border: 5px solid #555"></td>
+</tr>
+</table>
+
+</article>
+
+</section>
+
+<footer>
+ <p>© 2023 myBank Pvt. Ltd.</p>
+</footer>
+
+</body>
+</html>
+
+
+

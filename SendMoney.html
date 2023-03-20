@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Send Money</title>
+
+<style>
+* {
+	box-sizing : border-box;
+}
+
+header{
+ background-color : #666;
+ padding : 30px;
+ text-align : center;
+ font-size : 35px;
+ color : white;
+}
+
+nav{
+ float : left;
+ width : 30%;
+ height : 300px;
+ background : #ccc;
+ font-size : 20px;
+ padding : 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article{
+ float : left;
+ padding : 20px;
+ width : 70%;
+ background-color : #f1f1f1;
+ height : 300px;
+}
+
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+footer{
+ background-color : #777;
+ padding : 10px;
+ text-align : center;
+ color : white;
+}
+
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<header>
+ <h2>Send money to the customer of your choice!</h2>
+</header>
+
+<section>
+<nav>
+ <ul>
+  <li><a href="myBankHome.html">Home</a></li><br>
+  <li><a href="ViewCust.html">View all customers</a></li><br>
+  <li><a href="#">Send money</a></li><br>
+ </ul>
+</nav>
+
+<article id="lst_cust">
+<h2>
+<label for="customers">Customer name : </label>
+<select onchange="MyJavaScript(this)" id="customers">
+  <option value="">Select customer</option>
+  <option value="Rahul">Rahul</option>
+  <option value="Rekha">Rekha</option>
+  <option value="Naveen">Naveen</option>
+  <option value="Divya">Divya</option>
+  <option value="Megha">Megha</option>
+  <option value="Arun">Arun</option>
+  <option value="Shriya">Shriya</option>
+  <option value="Varun">Varun</option>
+
+</select></h2>
+
+
+<form id="frm_amt">
+  <label for="amount">Enter the amount : </label>
+  <input type="text" id="amount"><br><br>
+</form>
+
+
+<script type="text/javascript">
+let option_value=-1;
+
+function MyJavaScript(dropdown)
+{
+    option_value = dropdown.options[dropdown.selectedIndex].value;
+   var sel_cust = "Selected customer : " + option_value;
+   const custList = document.querySelector("#lst_cust");
+}
+
+function getVal(){
+ var trf_amt = document.getElementById("amount").value;
+ document.getElementById("lst_cust").innerHTML += '<h3>Amount of Rs.' + trf_amt + ' has been sent to ' + option_value + '</h3>';
+}
+
+function refresh(){
+ location.reload();
+}
+
+</script>
+
+<br>
+<button onclick="getVal()">Submit</button>
+<button onclick="refresh()">Reset</button>
+<br><br>
+
+</article>
+</section>
+
+
+
+<footer>
+ <p>© 2023 myBank Pvt. Ltd.</p>
+</footer>
+
+</body>
+</html>
+
+
+
